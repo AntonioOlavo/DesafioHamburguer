@@ -91,3 +91,36 @@ export const ContainerLoader = styled.div`
   }
 
 `
+
+export const FlexContainerItems = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+`
+
+export const ContainerItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+`
+export const MenuImage = styled.img`
+  border-radius:100%;
+  width: 8em;
+  height:8em;
+  &:active{
+    border: 2px solid ${props => props.theme.colors.primary};
+  }
+`
+
+export const MenuImageText = styled.p`
+  font-weight: 500;
+  font-size: 18px;
+  color: ${props => props.theme.colors.contrast};
+  &:active{
+    border-bottom: 2px solid ${props => props.theme.colors.primary};
+}
+`
