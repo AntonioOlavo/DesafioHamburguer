@@ -11,7 +11,7 @@ export const ContainerSearch = styled.div`
   border-radius: 8px;
   outline: none;
 
-  .searchBar{
+  .searchBar {
     width: 100%;
     height: 100%;
     background-color: transparent;
@@ -21,15 +21,19 @@ export const ContainerSearch = styled.div`
     font-size: 16px;
   }
 
-  .iconSearch{
+  .iconSearch {
     margin: 10px 12px;
     cursor: pointer;
   }
 
-  @media screen and (max-width: 425px){
-    max-width: 90%;
+  @media screen and (max-width: 768px) {
+    width: 90%;
   }
-`
+
+  @media screen and (max-width: 425px) {
+    width: 100%;
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -38,17 +42,22 @@ export const Container = styled.div`
   padding: 32px 40px;
   gap: 24px;
 
-  .containerItems{
+  .containerItems {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  @media screen and (max-width: 425px){
+  @media screen and (max-width: 768px) {
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  @media screen and (max-width: 425px) {
     flex-wrap: wrap;
   }
-`
+`;
 
 export const ContainerLoader = styled.div`
   box-sizing: border-box;
@@ -57,9 +66,6 @@ export const ContainerLoader = styled.div`
   width: 100px;
   height: 100px;
 
-  div {
-    box-sizing: border-box;
-  }
   div {
     box-sizing: border-box;
     display: block;
@@ -72,6 +78,7 @@ export const ContainerLoader = styled.div`
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: ${props => props.theme.colors.primary} transparent transparent transparent;
   }
+
   div:nth-child(1) {
     animation-delay: -0.45s;
   }
@@ -81,6 +88,7 @@ export const ContainerLoader = styled.div`
   div:nth-child(3) {
     animation-delay: -0.15s;
   }
+
   @keyframes lds-ring {
     0% {
       transform: rotate(0deg);
@@ -89,8 +97,7 @@ export const ContainerLoader = styled.div`
       transform: rotate(360deg);
     }
   }
-
-`
+`;
 
 export const FlexContainerItems = styled.div`
   display: flex;
@@ -98,7 +105,12 @@ export const FlexContainerItems = styled.div`
   justify-content: center;
   flex-direction: row;
   gap: 1rem;
-`
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 425px) {
+    gap: 0.5rem;
+  }
+`;
 
 export const ContainerItem = styled.div`
   display: flex;
@@ -106,21 +118,37 @@ export const ContainerItem = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-`
+
+  @media screen and (max-width: 425px) {
+    gap: 0.5rem;
+  }
+`;
+
 export const MenuImage = styled.img`
-  border-radius:100%;
+  border-radius: 100%;
   width: 8em;
-  height:8em;
-  &:active{
+  height: 8em;
+
+  &:active {
     border: 2px solid ${props => props.theme.colors.primary};
   }
-`
+
+  @media screen and (max-width: 425px) {
+    width: 6em;
+    height: 6em;
+  }
+`;
 
 export const MenuImageText = styled.p`
   font-weight: 500;
   font-size: 18px;
   color: ${props => props.theme.colors.contrast};
-  &:active{
+
+  &:active {
     border-bottom: 2px solid ${props => props.theme.colors.primary};
-}
-`
+  }
+
+  @media screen and (max-width: 425px) {
+    font-size: 16px;
+  }
+`;
